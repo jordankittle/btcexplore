@@ -4,8 +4,7 @@ function searchBlockPerHeight(height)
 		type: 'GET',
 		url: 'https://blockstream.info/api/block-height/' + height,
 		success: function(response){
-			var data = response;
-			showBlockByHash(data);
+			showBlockByHash(response);
 		},
 		error: function(response){
 			console.log(response);
@@ -19,8 +18,7 @@ function searchTxsPerHeight(height)
 		type: 'GET',
 		url: 'https://blockstream.info/api/block-height/' + height,
 		success: function(response){
-			var data = response;
-			showTxsByHash(data, height, 0);
+			showTxsByHash(response, height, 0);
 		},
 		error: function(response){
 			console.log(response);
@@ -28,10 +26,6 @@ function searchTxsPerHeight(height)
 	});
 }
 
-function clearBlocks()
-{
-	$("#blocks").empty();
-}
 
 function showBlockByHash(hash)
 {
@@ -104,8 +98,10 @@ function getLatestBlockHeight()
 		type: 'GET',
 		url: 'https://blockstream.info/api/blocks/tip/height',
 		success: function(response){
-			var data = response;
-			displayLatestBlocks(data);
+			displayLatestBlocks(response);
+		},
+		error: function(response){
+			console.log(response);
 		}
 	});
 }
@@ -117,8 +113,10 @@ function getBlocks()
 		type: 'GET',
 		url: 'https://blockstream.info/api/blocks',
 		success: function(response){
-			var data = response;
-			return data;
+			return response;
+		},
+		error: function(response){
+			console.log(response);
 		}
 	});
 }
@@ -156,6 +154,9 @@ function displayLatestBlocks(startheight)
 		$("#loadMore").remove();   
 		$("#blocks").append(string2);
 		
+		},
+		error: function(response){
+			console.log(response);
 		}
 	});
 }
@@ -165,7 +166,10 @@ function showDetails(block)
 	$("#" + block + " .toggle").toggle();
 }
 
-
+function clearBlocks()
+{
+	$("#blocks").empty();
+}
 
 function searchBlocks(query)
 {
@@ -179,6 +183,5 @@ function searchBlocks(query)
 	}
 
 }
-
 
 getLatestBlockHeight();

@@ -101,7 +101,7 @@ nav ul {
 nav a {
     display: block;
     margin-bottom: 10px;
-    padding: 15px 0;
+    padding: 1em, 0;
 
     text-align: center;
     text-decoration: none;
@@ -221,6 +221,22 @@ nav a:hover {
     font-size:1.2em;
 }
 
+.footer-container a:link {
+  color: white;
+  text-decoration:none;
+}
+.footer-container a:visited {
+   color: white; 
+}
+
+.footer-container a:hover {
+  color: white;  
+}
+
+.footer-container a:active {
+   color: white; 
+}
+
 @media only screen and (max-width: 600px) {
   .block span.blocksmall {
     font-size:.60em;
@@ -250,7 +266,7 @@ nav a:hover {
         float: left;
         width: 27%;
         margin: 0 1.7%;
-        padding: 25px 2%;
+        padding: 1em 8%;
         margin-bottom: 0;
     }
 
