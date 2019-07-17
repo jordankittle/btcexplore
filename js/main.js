@@ -1,12 +1,10 @@
 function searchBlockPerHeight(height)
 {
-	console.log('Searching by block height');
 	$.ajax({
 		type: 'GET',
 		url: 'https://blockstream.info/api/block-height/' + height,
 		success: function(response){
 			var data = response;
-			console.log(data);
 			showBlockByHash(data);
 		},
 		error: function(response){
@@ -17,13 +15,11 @@ function searchBlockPerHeight(height)
 
 function searchTxsPerHeight(height)
 {
-	console.log('Searching txs by block height');
 	$.ajax({
 		type: 'GET',
 		url: 'https://blockstream.info/api/block-height/' + height,
 		success: function(response){
 			var data = response;
-			console.log(data);
 			showTxsByHash(data, height, 0);
 		},
 		error: function(response){
@@ -39,13 +35,11 @@ function clearBlocks()
 
 function showBlockByHash(hash)
 {
-	console.log('Searching by block hash');
 	$.ajax({
 		type: 'GET',
 		url: 'https://blockstream.info/api/block/' + hash,
 		success: function(response){
 			var data = response;
-			console.log(data);
 			$("#blocks").empty();
 
 
@@ -79,15 +73,12 @@ function showBlockByHash(hash)
 
 function showTxsByHash(hash, height, startindex)
 {
-	console.log('showing addresses by hash at start index: ' + startindex);
 	$.ajax({
 		dataType: 'JSON',
 		type: 'GET',
 		url: 'https://blockstream.info/api/block/' + hash + '/txs/' + startindex,
 		success: function(response){
 			var data = response;
-			console.log(response);
-			//$("#blocks").empty();
 			$("#headertitle").html("Transactions for block " + height);
 			for (a=0; a<data.length; a++)
 			{
@@ -114,7 +105,6 @@ function getLatestBlockHeight()
 		url: 'https://blockstream.info/api/blocks/tip/height',
 		success: function(response){
 			var data = response;
-			console.log('returning block height: ' + data);
 			displayLatestBlocks(data);
 		}
 	});
@@ -128,7 +118,6 @@ function getBlocks()
 		url: 'https://blockstream.info/api/blocks',
 		success: function(response){
 			var data = response;
-			console.log('returning 10 blocks ');
 			return data;
 		}
 	});
@@ -142,8 +131,6 @@ function displayLatestBlocks(startheight)
 		url: 'https://blockstream.info/api/blocks/' + startheight,
 		success: function(response){
 			var data = response;
-			console.log('displaying 10 blocks from height: ' + startheight);
-			//$("#blocks").empty();
 			$("#headertitle").html("Latest Blocks");
 			for (a=0; a<data.length; a++)
 			{
