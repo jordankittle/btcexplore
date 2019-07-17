@@ -1,7 +1,7 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 html {
-    color: #444;
+    color: #4d4d4e;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -70,18 +70,18 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #0066ff;
+    border-bottom: 20px solid #0049f2;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #ff9900;
+    border-top: 20px solid #f2a900;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #0066ff;
+    background: #0049f2;
 }
 
 .title {
@@ -108,7 +108,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #ff9900;
+    background: #f2a900;
     text-decoration:none;
 }
 
@@ -213,25 +213,25 @@ a:active {
 
 
 #searchbox input {
-    color:#444444;
+    color:#4d4d4e;
     width:100%;
 }
 
 
 #blocks a:link {
-  color: #444444;
+  color: #4d4d4e;
   text-decoration:none;
 }
 #blocks a:visited {
-   color: #444444; 
+   color: #4d4d4e; 
 }
 
 #blocks a:hover {
-  color: #444444;  
+  color: #4d4d4e;  
 }
 
 #blocks a:active {
-   color: #444444; 
+   color: #4d4d4e; 
 }
 
 #loadMore {
