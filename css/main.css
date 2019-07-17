@@ -70,7 +70,7 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #177E89;
+    border-bottom: 20px solid #0066ff;
 }
 
 .footer-container,
@@ -81,7 +81,7 @@ body {
 .header-container,
 .footer-container,
 .main aside {
-    background: #177E89;
+    background: #0066ff;
 }
 
 .title {
@@ -109,6 +109,7 @@ nav a {
 
     color: white;
     background: #ff9900;
+    text-decoration:none;
 }
 
 nav a:hover,
@@ -117,7 +118,23 @@ nav a:visited {
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+a:link {
+  
+  text-decoration:none;
+}
+a:visited {
+   
+}
+
+a:hover {
+   
+}
+
+a:active {
+   
 }
 
 /* ==============
