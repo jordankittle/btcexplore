@@ -172,7 +172,7 @@ nav a:hover {
 }
 
 .block span.blocksmall {
-    font-size:.74em;
+    font-size:.78em;
 }
 
 #searchbox {
@@ -237,14 +237,31 @@ nav a:hover {
    color: white; 
 }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 900px) {
   .block span.blocksmall {
-    font-size:.60em;
+    font-size:.76em;
     }
     #loadMore{
         padding-bottom:1em;
     }
+    .block {
+        font-size:.9em;
+    }
 }
+
+@media only screen and (max-width: 600px) {
+  .block span.blocksmall {
+    font-size:.74em;
+    }
+    #loadMore{
+        padding-bottom:1em;
+    }
+    .block {
+        font-size:.85em;
+    }
+}
+
 
 
 
