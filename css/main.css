@@ -1,7 +1,7 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 html {
-    color: #222;
+    color: #444;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -75,7 +75,7 @@ body {
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #a2ad59;
+    border-top: 20px solid #ff9900;
 }
 
 .header-container,
@@ -108,7 +108,7 @@ nav a {
     font-weight: bold;
 
     color: white;
-    background: #a2ad59;
+    background: #ff9900;
 }
 
 nav a:hover,
@@ -196,25 +196,25 @@ nav a:hover {
 
 
 #searchbox input {
-    color:black;
+    color:#444444;
     width:100%;
 }
 
 
 #blocks a:link {
-  color: black;
+  color: #444444;
   text-decoration:none;
 }
 #blocks a:visited {
-   color: black; 
+   color: #444444; 
 }
 
 #blocks a:hover {
-  color: black;  
+  color: #444444;  
 }
 
 #blocks a:active {
-   color: black; 
+   color: #444444; 
 }
 
 #loadMore {
