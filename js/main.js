@@ -52,7 +52,7 @@ function showBlockByHash(hash)
 			var blockTimestamp = new Date(blockTime*1000).toLocaleString();
 
 			$("#headertitle").html("Block: " + blockHeight);
-			var string = "<div class='block' id='" + blockHeight + "'><span><a href='#' onClick='clearBlocks();searchTxsPerHeight(" + blockHeight + "); return false;'>Height: " + blockHeight  + "</span><span>" + blockTimestamp  + "</span><span>Tx: " + blockTxCount  + "</span><span>Size: " + blockSize/1000 + "KB</span></a><span><span><a href='#' onClick='showDetails(" + blockHeight + "); return false;'>Details<i class='ui-icon ui-icon-triangle-1-s toggle'></i><i class='ui-icon ui-icon-triangle-1-n toggle' style='display:none'></i></a></span><br><span style='padding:0' class='hide toggle'><span class='blocksmall'>Id: " + blockId + "</span><br><span class='blocksmall'>Merkle Root: " + blockMerkleRoot + "</span><br><span class='blocksmall'>Previous Hash : " + blockPreviousBlockhash + "</span><br><span class='blocksmall'>Version: " + blockVersion + "</span><span class='blocksmall'>Nonce: " + blockNonce + "</span><span class='blocksmall'>Bits : " + blockbits + "</span><br><span class='blocksmall'>Weight: " + blockWeight + "</span></span></div>";
+			var string = "<div class='block' id='" + blockHeight + "'><a href='#' onClick='showDetails(" + blockHeight + "); return false;'><span>Height: " + blockHeight  + "</span><span>" + blockTimestamp  + "</span><span>Tx: " + blockTxCount  + "</span><span>Size: " + blockSize/1000 + "KB</span></a><a href='#' onClick='clearBlocks();searchTxsPerHeight(" + blockHeight + "); return false;'><span>Tx List</span></a><span><span><a href='#' onClick='showDetails(" + blockHeight + "); return false;'>Details<i class='ui-icon ui-icon-triangle-1-s toggle'></i><i class='ui-icon ui-icon-triangle-1-n toggle' style='display:none'></i></a></span><br><span style='padding:0' class='hide toggle'><span class='blocksmall'>Id: " + blockId + "</span><br><span class='blocksmall'>Merkle Root: " + blockMerkleRoot + "</span><br><span class='blocksmall'>Previous Hash : " + blockPreviousBlockhash + "</span><br><span class='blocksmall'>Version: " + blockVersion + "</span><span class='blocksmall'>Nonce: " + blockNonce + "</span><span class='blocksmall'>Bits : " + blockbits + "</span><br><span class='blocksmall'>Weight: " + blockWeight + "</span></span></div>";
 			$("#blocks").append(string);
 			
 
@@ -73,7 +73,7 @@ function showTxsByHash(hash, height, startindex)
 		url: 'https://blockstream.info/api/block/' + hash + '/txs/' + startindex,
 		success: function(response){
 			var data = response;
-			$("#headertitle").html("Transactions for block " + height);
+			$("#headertitle").html("Transactions for <a href='#' onclick='searchBlockPerHeight(" + height + ");return false;'>block " + height + "</a>");
 			for (a=0; a<data.length; a++)
 			{
 				var txid = data[a].txid;
@@ -145,7 +145,7 @@ function displayLatestBlocks(startheight)
 				var blockbits = data[a].bits;
 				var blockTimestamp = new Date(blockTime*1000).toLocaleString();
 
-				var string = "<div class='block' id='" + blockHeight + "'><span><a href='#' onClick='clearBlocks();searchTxsPerHeight(" + blockHeight + "); return false;'>Height: " + blockHeight  + "</span><span>" + blockTimestamp  + "</span><span>Tx: " + blockTxCount  + "</span><span>Size: " + blockSize/1000 + "KB</span></a><span><span><a href='#' onClick='showDetails(" + blockHeight + "); return false;'>Details<i class='ui-icon ui-icon-triangle-1-s toggle'></i><i class='ui-icon ui-icon-triangle-1-n toggle' style='display:none'></i></a></span><br><span style='padding:0' class='hide toggle'><span class='blocksmall'>Id: " + blockId + "</span><br><span class='blocksmall'>Merkle Root: " + blockMerkleRoot + "</span><br><span class='blocksmall'>Previous Hash : " + blockPreviousBlockhash + "</span><br><span class='blocksmall'>Version: " + blockVersion + "</span><span class='blocksmall'>Nonce: " + blockNonce + "</span><span class='blocksmall'>Bits : " + blockbits + "</span><br><span class='blocksmall'>Weight: " + blockWeight + "</span></span></div>";
+				var string = "<div class='block' id='" + blockHeight + "'><a href='#' onClick='showDetails(" + blockHeight + "); return false;'><span>Height: " + blockHeight  + "</span><span>" + blockTimestamp  + "</span><span>Tx: " + blockTxCount  + "</span><span>Size: " + blockSize/1000 + "KB</span></a><a href='#' onClick='clearBlocks();searchTxsPerHeight(" + blockHeight + "); return false;'><span>Tx List</span></a><span><span><a href='#' onClick='showDetails(" + blockHeight + "); return false;'>Details<i class='ui-icon ui-icon-triangle-1-s toggle'></i><i class='ui-icon ui-icon-triangle-1-n toggle' style='display:none'></i></a></span><br><span style='padding:0' class='hide toggle'><span class='blocksmall'>Id: " + blockId + "</span><br><span class='blocksmall'>Merkle Root: " + blockMerkleRoot + "</span><br><span class='blocksmall'>Previous Hash : " + blockPreviousBlockhash + "</span><br><span class='blocksmall'>Version: " + blockVersion + "</span><span class='blocksmall'>Nonce: " + blockNonce + "</span><span class='blocksmall'>Bits : " + blockbits + "</span><br><span class='blocksmall'>Weight: " + blockWeight + "</span></span></div>";
 				$("#blocks").append(string);
 				
 			}

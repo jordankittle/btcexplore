@@ -70,18 +70,34 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #0049f2;
+    border-bottom: 0;
+}
+
+#headertitle a:link {
+  color: #4d4d4e;
+  text-decoration:none;
+}
+#headertitle a:visited {
+   color: #4d4d4e; 
+}
+
+#headertitle a:hover {
+  color: #4d4d4e;  
+}
+
+#headertitle a:active {
+   color: #4d4d4e; 
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #f2a900;
+    border-top: 1em solid #f2a900;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #0049f2;
+    background: #5c9ab5;
 }
 
 .title {
@@ -124,6 +140,7 @@ nav a:hover {
 a:link {
   
   text-decoration:none;
+  font-weight:bold;
 }
 a:visited {
    
@@ -181,7 +198,6 @@ a:active {
     background-color: #f8f8f8;
     margin:1em;
     padding:.25em;
-    border-radius:15px;
 }
 
 .block span {
