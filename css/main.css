@@ -188,6 +188,9 @@ a:active {
    Author's custom styles
    ========================================================================== */
 
+.main-container {
+    background-color:#fdfdfd;
+}
 
 #blocks {
     font-size:.78em;
