@@ -203,6 +203,10 @@ a:active {
     padding:.25em;
 }
 
+.tx {
+    font-size:.8em;
+}
+
 .block span {
     padding:.5em;
 }
@@ -284,6 +288,9 @@ a:active {
     .block {
         font-size:.9em;
     }
+    .tx {
+        font-size:.74em;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -295,6 +302,9 @@ a:active {
     }
     .block {
         font-size:.85em;
+    }
+    .tx {
+        font-size:.70em;
     }
 }
 

@@ -73,11 +73,16 @@ function showTxsByHash(hash, height, startindex)
 		url: 'https://blockstream.info/api/block/' + hash + '/txs/' + startindex,
 		success: function(response){
 			var data = response;
+			console.log(data);
 			$("#headertitle").html("Transactions for <a href='#' onclick='searchBlockPerHeight(" + height + ");return false;'>block " + height + "</a>");
 			for (a=0; a<data.length; a++)
 			{
 				var txid = data[a].txid;
-				var string = "<div class='block' id='" + txid + "'>" + (1+startindex+a) + ".)Tx ID: " + txid + "</div>";
+				var confirmed = (data[a].status.confirmed == true)?'Confirmed':'Unconfirmed';
+				var size = data[a].size;
+				var weight = data[a].weight;
+
+				var string = "<div class='block tx' id='" + txid + "'><a href='#' onClick='showDetails(\"" + txid + "\"); return false;'>" + (1+startindex+a) + ".)Tx ID: " + txid + "<span><i class='ui-icon ui-icon-triangle-1-s toggle'></i><i class='ui-icon ui-icon-triangle-1-n toggle' style='display:none'></i></a></span><br><span style='padding:0' class='hide toggle'><span>" + confirmed + "</span><span>Size: " + size + "</span><span>Weight: " + weight + "</span></span></div>";
 				$("#blocks").append(string);
 			}
 			var newindex = startindex + 25;
